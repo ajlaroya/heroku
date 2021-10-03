@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import django_heroku
-import cloudinary
-import cloudinary_storage
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,13 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'blog',
     'crispy_forms',
     'django_unused_media',
     'gunicorn',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -128,8 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/staticfiles/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Media files uploaded by user
 MEDIA_ROOT = MEDIA_DIR
@@ -161,11 +157,3 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'huu4pll5j',
-    'API_KEY': '797161215391439',
-    'API_SECRET': 'zCD4QgoK5mli06j0WYimzTyI9tg',
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
