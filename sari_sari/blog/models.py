@@ -17,7 +17,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
     tag = models.ManyToManyField(Tag, help_text='Hold ctrl to pick multiple tags!')
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='images',blank=True)
     like = models.IntegerField(blank=True,null=True)
 
     # linked to a publish button

@@ -162,9 +162,10 @@ DATABASES['default'].update(db_from_env)
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# adding config
-cloudinary.config(
-  cloud_name = "huu4pll5j",
-  api_key = "797161215391439",
-  api_secret = "zCD4QgoK5mli06j0WYimzTyI9tg"
-)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'huu4pll5j',
+    'API_KEY': '797161215391439',
+    'API_SECRET': 'zCD4QgoK5mli06j0WYimzTyI9tg',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
