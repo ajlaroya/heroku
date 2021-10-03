@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse # after action redirection
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Tag(models.Model):
@@ -16,7 +17,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
     tag = models.ManyToManyField(Tag, help_text='Hold ctrl to pick multiple tags!')
-    image = models.ImageField(upload_to='images',blank=True)
+    image = models.CloudinaryField('image')
     like = models.IntegerField(blank=True,null=True)
 
     # linked to a publish button

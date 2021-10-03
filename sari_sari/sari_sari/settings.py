@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import django_heroku
 from pathlib import Path
 
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_unused_media',
     'gunicorn',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +161,10 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# adding config
+cloudinary.config(
+  cloud_name = "huu4pll5j",
+  api_key = "797161215391439",
+  api_secret = "zCD4QgoK5mli06j0WYimzTyI9tg"
+)
