@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import django_heroku
+import cloudinary
+import cloudinary_storage
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -131,7 +133,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files uploaded by user
 MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/staticfiles/'
+MEDIA_URL = '/media/'
 
 # Log redirection
 LOGIN_REDIRECT_URL = '/' # redirection to home page
