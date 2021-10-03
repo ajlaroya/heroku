@@ -131,7 +131,7 @@ STATICFILES_DIRS = BASE_DIR / 'static'
 
 # Media files uploaded by user
 MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/staticfiles/'
+MEDIA_URL = '/media/'
 
 # Log redirection
 LOGIN_REDIRECT_URL = '/' # redirection to home page
