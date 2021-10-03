@@ -38,12 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'blog',
     'crispy_forms',
     'django_unused_media',
     'gunicorn',
-    'storages',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -158,3 +159,11 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'huu4pll5j',
+    'API_KEY': '797161215391439',
+    'API_SECRET': 'zCD4QgoK5mli06j0WYimzTyI9tg',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
