@@ -1,0 +1,123 @@
+/* my classes */
+@font-face {
+  font-family: 'bluu_nextbold';
+  src: url('bluunext-bold/bluunext-bold-webfont.woff2') format('woff2'),
+       url('bluunext-bold/bluunext-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* prevents FOIT (flash of invisible text) */
+}
+
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+
+  font-family: 'Jost', sans-serif;
+  background: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+footer {
+  background-color: #F5F5F5;
+}
+
+.list-group-item {
+  background-color: #F5F5F5;
+}
+
+.brand {
+  font-family: 'bluu_nextbold', serif;
+}
+
+.posttitle {
+  font-family: 'bluu_nextbold', serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+.card:hover img {
+  opacity:100%;
+  transition:opacity 1s
+}
+
+/* hover off transition */
+.card:not(:hover) img {
+  opacity:80%;
+  transition:opacity 1s
+}
+
+.fill img {
+  object-fit: cover;
+}
+
+/* hue loader */
+/* credit and source: http://codepen.io/thapliyalshivam/pen/dvgXVO */
+.loader {
+  height:5px;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  filter:hue-rotate(0deg);
+  background:linear-gradient(45deg,#0f8,#08f);
+  animation:hue 10000ms infinite linear;
+}
+
+@keyframes hue{
+  0%{filter: hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
+}
+
+/* typing effect */
+/* credit and source: https://codepen.io/Coding_Journey/pen/BEMgbX */
+.wrapper p {
+  font-size: 2rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.wrapper h1 span.typed-text {
+  font-family: 'Jost', sans-serif;
+  background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114), rgba(85,88,218,1), rgba(95,209,249,1));
+  background-size: 200%;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 2s ease-in-out infinite;
+}
+
+.wrapper h1 span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+.wrapper p span.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100% { background-color: #ccc; }
+}
+
+@keyframes shine {
+  to {
+  background-position: 200% center;
+  }
+}

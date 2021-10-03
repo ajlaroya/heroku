@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1 class="posttitle">Login</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    {{ form.username|as_crispy_field }}
+    <div id="emailHelp" class="form-text">Must be superuser, check with site admin</div>
+  </div>
+  <div class="mb-3">
+    {{ form.password|as_crispy_field }}
+  </div>
+  <button class="save btn btn-primary" type="submit" name="button">Login</button>
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{% if form.errors %}
+  <p>Your username and password didn't match! Please try again</p>
+{% endif %}
+
+{% endblock %}

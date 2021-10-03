@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Tiny MCE -->
+<script src="https://cdn.tiny.cloud/1/zsb19o0aup0zisuzd21tvhq2dif95ztik3k57faz1jgrwec0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+ tinymce.init({
+   selector: '#mytextarea'
+ });
+</script>
+
+<h1 class="posttitle">Draft a new post!</h1>
+<hr>
+<form class="mb-3" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="mb-3">
+    {{ form.author|as_crispy_field }}
+  </div>
+  <div class="mb-3">
+    {{ form.title|as_crispy_field }}
+  </div>
+  <div class="mb-3">
+    {{ form.tag|as_crispy_field }}
+  </div>
+  <div class="mb-3">
+    {{ form.image|as_crispy_field }}
+  </div>
+  <div class="mb-3">
+    {{ form.text }}
+    <div class="form-text">Let's get creative! Highlight text to edit.</div>
+  </div>
+  <button class="save btn btn-primary" type="submit" name="button">Save</button>
+</form>
+
+{% endblock %}
