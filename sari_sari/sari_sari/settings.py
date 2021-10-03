@@ -127,11 +127,10 @@ USE_TZ = True
 
 STATIC_URL = '/staticfiles/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = BASE_DIR / 'static'
 
 # Media files uploaded by user
 MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/media/'
+MEDIA_URL = '/staticfiles/'
 
 # Log redirection
 LOGIN_REDIRECT_URL = '/' # redirection to home page
