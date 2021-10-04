@@ -149,6 +149,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
 
+# Security
 SECURE_SSL_REDIRECT = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
