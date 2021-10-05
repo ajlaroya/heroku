@@ -41,17 +41,18 @@ footer {
 
 .card:hover img {
   opacity:100%;
-  transition:opacity 1s
+  transition:opacity 1s;
 }
 
 .card:hover .hidden-text {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* hover off transition */
 .card:not(:hover) img {
   opacity:80%;
-  transition:opacity 1s
+  transition:opacity 1s;
 }
 
 .fill img {
@@ -59,7 +60,9 @@ footer {
 }
 
 .hidden-text {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 /* hue loader */
