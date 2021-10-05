@@ -28,7 +28,7 @@
         {% endif %}
       </div>
       <!-- Post -->
-      <div class="">
+      <div>
 
         <!-- Image -->
         {% if post.image %}
@@ -39,7 +39,9 @@
         {% endif %}
 
         <!-- Text -->
-        <p>{{ post.text|safe|linebreaksbr}}</p>
+        <div>
+          {{ post.text|safe|linebreaksbr}}
+        </div>
 
         <!-- Post buttons -->
         <div class="d-flex justify-content-center p-3">
