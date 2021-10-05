@@ -44,6 +44,10 @@ footer {
   transition:opacity 1s
 }
 
+.card:hover .hidden-text {
+  display: block;
+}
+
 /* hover off transition */
 .card:not(:hover) img {
   opacity:80%;
@@ -52,6 +56,10 @@ footer {
 
 .fill img {
   object-fit: cover;
+}
+
+.hidden-text {
+  display: none;
 }
 
 /* hue loader */
