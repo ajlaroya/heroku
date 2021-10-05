@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col border-end">
       <!-- Title -->
-      <h1 class="brand pt-3">{{ post.title }}</h1>
+      <h1 class="brand py-2 text-center">{{ post.title }}</h1>
       <!-- Extra deets -->
       <div class="d-flex justify-content-between pb-2">
         <!-- Tags -->
@@ -23,7 +23,7 @@
         <!-- Publish date -->
         {% if post.published_date %}
         <div class="text-muted">
-          {{ post.published_date }}
+          published on {{ post.published_date }}
         </div>
         {% endif %}
       </div>
@@ -34,7 +34,7 @@
         {% if post.image %}
         <figure class="figure">
           <img class="img-fluid img-thumbnail" src="{{ post.image.url }}" alt="user image">
-          <figcaption class="figure-caption">{{ post.image.name }}</figcaption>
+          <!-- <figcaption class="figure-caption">{{ post.image.name }}</figcaption> -->
         </figure>
         {% endif %}
 
@@ -87,7 +87,7 @@
     <!-- Sidebar -->
     <div class="col-md-3 pt-3">
       <ol class="list-group list-group-flush sticky-top">
-        <span class="brand text-center fs-4 pb-2">latest posts 👇</span>
+        <span class="brand text-center fs-4 pb-2">latest posts</span>
         {% for post in detailed %}
         {% url 'post_detail' pk=post.pk as detail_url %}
         <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-start {% if request.path == detail_url %}active{% endif %}">
