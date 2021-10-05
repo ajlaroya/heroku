@@ -2,7 +2,7 @@
 
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
-const textArray = [ "is a blog", "is creativity", "is variety", "is colours", " is a journey", "is discovery", "is learning", "is a home" ];
+const textArray = [ "is a blog", "is creativity", "is variety", "is colour", "is a journey", "is discovery", "is learning", "is home" ];
 const typingDelay = 130;
 const erasingDelay = 100;
 const newTextDelay = 2000; // Delay between current and next text
