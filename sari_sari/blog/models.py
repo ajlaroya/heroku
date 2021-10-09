@@ -19,7 +19,6 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag, help_text='Hold ctrl to pick multiple tags!')
     image = models.ImageField(upload_to='images',blank=True)
     like = models.IntegerField(blank=True,null=True)
-    slug = models.SlugField(null=True,db_index=True)
 
     # linked to a publish button
     def publish(self):
