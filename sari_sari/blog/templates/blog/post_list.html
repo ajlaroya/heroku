@@ -31,7 +31,7 @@
             <div class="d-flex justify-content-between">
               <div class="">
                 {% for tag in post.tag.all %}
-                <span class="badge bg-primary">{{ tag }}</span>
+                <span class="badge" style="background-color:{{ tag.colour }};">{{ tag }}</span>
                 {% endfor %}
               </div>
 

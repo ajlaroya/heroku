@@ -6,6 +6,10 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class Tag(models.Model):
     name = models.CharField(max_length=50)
+    colour = models.CharField(max_length=7, default="#ffffff")
+
+    def coloured_tag(self):
+        return self.colour
 
     def __str__(self):
         return self.name
