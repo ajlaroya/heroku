@@ -1,7 +1,15 @@
-from django.urls import re_path
+from django.urls import re_path, path
 from blog import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import PostSitemap, StaticSitemap
+
+sitemaps = {
+    'post':PostSitemap,
+    'static':StaticSitemap
+}
 
 urlpatterns = [
     re_path(r'^$',views.PostListView.as_view(),name='post_list'),
@@ -15,4 +23,6 @@ urlpatterns = [
     re_path(r'^comment/(?P<pk>\d+)/approve/$',views.comment_approve,name='comment_approve'),
     re_path(r'^comment/(?P<pk>\d+)/remove/$',views.comment_remove,name='comment_remove'),
     re_path(r'^post/(?P<pk>\d+)/publish/$',views.post_publish,name='post_publish'),
+    re_path(r'^robots.txt/$',TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    re_path(r'^sitemap.xml/$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
