@@ -58,7 +58,7 @@
             <p class="card-text"><small class="text-muted">{{ post.published_date|date:"jS M Y" }}</small></p>
             <p class="card-text"><em>{{ post.text|truncatechars:150|striptags }}</em></p>
             {% for tag in post.tag.all %}
-            <span class="badge bg-primary">{{ tag }}</span>
+            <span class="badge" style="background-color:{{ tag.colour }};">{{ tag }}</span>
             {% endfor %}
             <p class="card-text">
               <a href="{% url 'post_detail' pk=post.pk %}" class="stretched-link" aria-label="read"></a>
