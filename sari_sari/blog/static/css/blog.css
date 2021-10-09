@@ -25,6 +25,15 @@ footer {
   background-color: #F5F5F5;
 }
 
+code {
+  font-family: monospace;
+  background: #ffeff0;
+ word-wrap: break-word;
+ box-decoration-break: clone;
+ padding: .1rem .3rem .2rem;
+ border-radius: .2rem;
+}
+
 .list-group-item {
   background-color: #F5F5F5;
 }
