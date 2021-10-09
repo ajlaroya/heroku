@@ -19,6 +19,7 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag, help_text='Hold ctrl to pick multiple tags!')
     image = models.ImageField(upload_to='images',blank=True)
     like = models.IntegerField(blank=True,null=True)
+    slug = models.SlugField(null=True,db_index=True)
 
     # linked to a publish button
     def publish(self):
@@ -29,7 +30,7 @@ class Post(models.Model):
         return self.comments.filter(approved_comment=True)
 
     def get_absolute_url(self): # django method to create URL for instance of post
-        return reverse('post_detail',kwargs={'pk':self.pk}) # goes to post_detail view with primary key
+        return reverse('post_detail',kwargs={'slug': self.slug}) # goes to post_detail view with primary key
 
     def number_of_likes(self):
         return self.like.count()
