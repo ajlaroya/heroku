@@ -54,7 +54,7 @@
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card text-center">
           <div class="card-body">
-            <p class="h5 card-title brand text-truncate">{{ post.title }}</p>
+            <p class="h5 card-title brand">{{ post.title }}</p>
             <p class="card-text"><small class="text-muted">{{ post.published_date|date:"jS M Y" }}</small></p>
             <p class="card-text"><em>{{ post.text|truncatechars:150|striptags }}</em></p>
             {% for tag in post.tag.all %}
