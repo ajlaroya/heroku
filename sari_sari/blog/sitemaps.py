@@ -1,9 +1,10 @@
 from django.contrib.sitemaps import Sitemap
+from django.urls import reverse
 from .models import Post
 
 class PostSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 1 # importance
+    changefreq = "weekly"
+    priority = 0.5 # importance
     protocol = "https"
 
     def items(self):
@@ -13,12 +14,12 @@ class PostSitemap(Sitemap):
         return obj.published_date
 
 class StaticSitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.8
+    changefreq = "monthly"
+    priority = 0.4
     protocol = 'https'
 
     def items(self):
-        return ['/about']
+        return ['about']
 
     def location(self, item):
-        return item
+        return reverse(item)
